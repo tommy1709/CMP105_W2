@@ -29,7 +29,35 @@ void Level::handleInput()
 	if (input->isKeyDown(sf::Keyboard::W))
 	{
 		input->setKeyUp(sf::Keyboard::W);
-		std::cout << "W was pressed \n";
+		if (!font.loadFromFile("font/arial.ttf"));
+		{
+			std::cout << "Error loading font\n";
+		}
+		text.setFont(font);
+		text.setString("W was prssed");
+		text.setCharacterSize(30);
+		text.setFillColor(sf::Color::Green);
+		text.setStyle(sf::Text::Bold | sf::Text::Underlined);
+		text.setPosition(300, 300);
+
+	}
+
+	if (input->isKeyDown(sf::Keyboard::J) && input->isKeyDown(sf::Keyboard::K) && input->isKeyDown(sf::Keyboard::L))
+	{
+		input->setKeyUp(sf::Keyboard::J);
+		input->setKeyUp(sf::Keyboard::K);
+		input->setKeyUp(sf::Keyboard::L);
+
+		if (!font.loadFromFile("font/arial.ttf"));
+		{
+			std::cout << "Error loading font\n";
+		}
+		text.setFont(font);
+		text.setString("J, K, & L were prssed");
+		text.setCharacterSize(30);
+		text.setFillColor(sf::Color::Magenta);
+		text.setStyle(sf::Text::Bold | sf::Text::Underlined);
+		text.setPosition(300, 500);
 
 	}
 
